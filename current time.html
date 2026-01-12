@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>現在時間</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-size: 23vw;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding-top: 25vh;
+    }
+
+    #time {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="time">00:00:00</div>
+
+  <script>
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('zh-Hant-TW', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+    document.getElementById('time').textContent = timeString;
+  }
+  updateTime(); 
+  setInterval(updateTime, 1000); 
+  </script>
+</body>
+</html>
